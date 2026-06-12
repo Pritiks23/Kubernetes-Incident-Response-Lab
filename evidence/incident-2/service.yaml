@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-06-12T18:33:49Z"
+  labels:
+    app: nginx
+  name: nginx
+  namespace: default
+  resourceVersion: "5428"
+  uid: 8f8b1d75-155a-4d08-ae01-c5f67049a275
+spec:
+  clusterIP: 10.96.47.3
+  clusterIPs:
+  - 10.96.47.3
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

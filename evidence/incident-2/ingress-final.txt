@@ -1,0 +1,2 @@
+NAME            CLASS    HOSTS   ADDRESS     PORTS   AGE
+nginx-ingress   <none>   *       localhost   80      47m
