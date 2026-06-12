@@ -1,4 +1,7 @@
 # Kubernetes-Incident-Response-Lab
+## Demo Video
+
+[![Watch the Demo](https://img.youtube.com/vi/I_9eVDJnQ0M/maxresdefault.jpg)](https://www.youtube.com/watch?v=I_9eVDJnQ0M)
 Built a Kubernetes troubleshooting lab containing 20 production-inspired outages. Diagnosed and resolved failures involving networking, DNS, ingress, storage, resource limits, configuration management, probes, scheduling, and container lifecycle issues. Authored incident runbooks and root-cause analyses for each scenario.
 
 
