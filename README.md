@@ -40,3 +40,46 @@ Restored Ingress rule to:
 
 ## Key Learning
 Ingress misconfigurations can break routing even when backend services are healthy.
+
+
+---
+
+# Incident 2: Service Selector Failure (Silent Traffic Outage)
+
+## Summary
+Simulated a Kubernetes service outage caused by a Service selector misconfiguration. Pods were healthy, but traffic failed due to missing endpoint resolution.
+
+## Initial State (Healthy)
+- nginx Deployment running with label `app=nginx`
+- ClusterIP Service correctly selecting `app=nginx`
+- Endpoints correctly pointing to Pod IP
+
+## Failure Injected
+Modified Service selector:
+- from `app=nginx`
+- to `app=broken`
+
+## Symptoms
+- Service showed zero endpoints
+- Internal cluster traffic to `http://nginx/` failed
+- Pods remained healthy and running (no CrashLoopBackOff or pod-level errors)
+
+## Root Cause
+Service selector mismatch caused Kubernetes to fail endpoint discovery, breaking service-to-pod routing.
+
+## Detection Method
+- `kubectl get endpoints nginx` returned empty
+- `kubectl describe svc nginx` showed selector mismatch
+- HTTP requests from debug pod failed
+
+## Resolution
+Restored Service selector:
+- `app=broken` → `app=nginx`
+
+## Outcome
+- Endpoints restored automatically
+- Full service-to-pod traffic flow recovered
+- Cluster returned to healthy state
+
+## Key Learning
+Service selector misconfigurations can cause silent, non-obvious outages where workloads remain healthy but are completely unreachable.
