@@ -1,0 +1,51 @@
+    1  uname -m
+    2  kubectl version --client
+    3  docker version
+    4  curl -Lo kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+    5  chmod +x kind
+    6  sudo mv kind /usr/local/bin/kind
+    7  kind version
+    8  kind create cluster --name incident-lab
+    9  kubectl get nodes
+   10  kubectl get pods -A
+   11  kubectl create deployment nginx --image=nginx
+   12  kubectl get deployments
+   13  kubectl get pods -o wide
+   14  kubectl get rs
+   15  kubectl expose deployment nginx --port=80 --type=ClusterIP
+   16  kubectl get svc
+   17  kubectl run debug --image=busybox -it --rm -- sh
+   18  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+   19  kubectl get pods -n ingress-nginx
+   20  kubectl create ingress nginx-ingress   --rule="/=nginx:80"
+   21  kubectl get ingress
+   22  kubectl describe ingress nginx-ingress
+   23  kubectl patch service nginx -p '{"spec":{"ports":[{"port":80,"targetPort":9999}]}}'
+   24  kubectl get svc nginx -o yaml
+   25  kubectl get endpoints nginx
+   26  kubectl run debug --image=busybox -it --rm -- sh
+   27  kubectl patch service nginx -p '{"spec":{"ports":[{"port":80,"targetPort":80}]}}'
+   28  kubectl get endpoints nginx
+   29  kubectl run debug --image=busybox -it --rm -- sh
+   30  wget -qO- http://nginx
+   31  kubectl get pods -o wide
+   32  kubectl logs nginx-*
+   33  kubectl logs nginx-7f8fbb96d-src7g
+   34  kubectl get ingress
+   35  kubectl describe ingress
+   36  kubectl get endpoints
+   37  kubectl logs -n ingress-nginx
+   38  mkdir -p evidence
+   39  kubectl get nodes -o wide > evidence/nodes.txt
+   40  kubectl cluster-info > evidence/cluster-info.txt
+   41  kubectl get all -o wide > evidence/all-resources.txt
+   42  kubectl get pods -A -o wide > evidence/all-pods.txt
+   43  kubectl get svc -A -o wide > evidence/all-services.txt
+   44  kubectl get ingress -A -o wide > evidence/all-ingress.txt
+   45  kubectl describe ingress nginx-ingress > evidence/ingress-describe.txt
+   46  kubectl get endpoints > evidence/endpoints.txt
+   47  kubectl get pods -n ingress-nginx
+   48  kubectl logs -n ingress-nginx <ingress-nginx-controller-54754544b9-gh7cp> > evidence/ingress-controller-logs.txt
+   49  kubectl logs -n ingress-nginx ingress-nginx-controller-54754544b9-gh7cp > evidence/ingress-controller-logs.txt
+   50  nano evidence/README.md
+   51  history > evidence/terminal-history.txt

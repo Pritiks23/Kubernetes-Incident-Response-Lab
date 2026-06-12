@@ -1,0 +1,3 @@
+NAME         ENDPOINTS         AGE
+kubernetes   172.18.0.2:6443   20m
+nginx        10.244.0.5:80     16m

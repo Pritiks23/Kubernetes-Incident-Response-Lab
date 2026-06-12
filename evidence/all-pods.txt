@@ -1,0 +1,12 @@
+NAMESPACE            NAME                                                 READY   STATUS    RESTARTS   AGE   IP           NODE                         NOMINATED NODE   READINESS GATES
+default              nginx-7f8fbb96d-src7g                                1/1     Running   0          17m   10.244.0.5   incident-lab-control-plane   <none>           <none>
+ingress-nginx        ingress-nginx-controller-54754544b9-gh7cp            1/1     Running   0          13m   10.244.0.9   incident-lab-control-plane   <none>           <none>
+kube-system          coredns-589f44dc88-9jfkv                             1/1     Running   0          19m   10.244.0.4   incident-lab-control-plane   <none>           <none>
+kube-system          coredns-589f44dc88-xx88w                             1/1     Running   0          19m   10.244.0.2   incident-lab-control-plane   <none>           <none>
+kube-system          etcd-incident-lab-control-plane                      1/1     Running   0          20m   172.18.0.2   incident-lab-control-plane   <none>           <none>
+kube-system          kindnet-xktdb                                        1/1     Running   0          19m   172.18.0.2   incident-lab-control-plane   <none>           <none>
+kube-system          kube-apiserver-incident-lab-control-plane            1/1     Running   0          20m   172.18.0.2   incident-lab-control-plane   <none>           <none>
+kube-system          kube-controller-manager-incident-lab-control-plane   1/1     Running   0          20m   172.18.0.2   incident-lab-control-plane   <none>           <none>
+kube-system          kube-proxy-9vqjf                                     1/1     Running   0          19m   172.18.0.2   incident-lab-control-plane   <none>           <none>
+kube-system          kube-scheduler-incident-lab-control-plane            1/1     Running   0          20m   172.18.0.2   incident-lab-control-plane   <none>           <none>
+local-path-storage   local-path-provisioner-855c7b7774-qgfzz              1/1     Running   0          19m   10.244.0.3   incident-lab-control-plane   <none>           <none>

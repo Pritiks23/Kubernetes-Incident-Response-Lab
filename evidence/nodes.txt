@@ -1,0 +1,2 @@
+NAME                         STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION             CONTAINER-RUNTIME
+incident-lab-control-plane   Ready    control-plane   20m   v1.36.1   172.18.0.2    <none>        Debian GNU/Linux 13 (trixie)   6.8.0-1052-azure (amd64)   containerd://2.3.1

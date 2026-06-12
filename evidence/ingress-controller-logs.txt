@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------
+NGINX Ingress controller
+  Release:       v1.15.1
+  Build:         0df02f2cfcf5fe4ad3cf31492bca770ac2a1606a
+  Repository:    https://github.com/kubernetes/ingress-nginx
+  nginx version: nginx/1.27.1
+
+-------------------------------------------------------------------------------
+
+W0612 18:37:26.951452      14 client_config.go:682] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I0612 18:37:26.952156      14 main.go:205] "Creating API client" host="https://10.96.0.1:443"
+I0612 18:37:26.975793      14 main.go:248] "Running in Kubernetes cluster" major="1" minor="36" git="v1.36.1" state="clean" commit="756939600b9a7180fc2df6550a4585b638875e67" platform="linux/amd64"
+I0612 18:37:29.503672      14 main.go:101] "SSL fake certificate created" file="/etc/ingress-controller/ssl/default-fake-certificate.pem"
+I0612 18:37:29.518244      14 ssl.go:535] "loading tls certificate" path="/usr/local/certificates/cert" key="/usr/local/certificates/key"
+I0612 18:37:29.525771      14 nginx.go:273] "Starting NGINX Ingress controller"
+I0612 18:37:29.534331      14 event.go:377] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"ingress-nginx", Name:"ingress-nginx-controller", UID:"023854af-c881-49e1-a135-20eafe9d3d66", APIVersion:"v1", ResourceVersion:"1095", FieldPath:""}): type: 'Normal' reason: 'CREATE' ConfigMap ingress-nginx/ingress-nginx-controller
+I0612 18:37:30.727065      14 nginx.go:319] "Starting NGINX process"
+I0612 18:37:30.727457      14 leaderelection.go:258] "Attempting to acquire leader lease..." lock="ingress-nginx/ingress-nginx-leader"
+I0612 18:37:30.730641      14 nginx.go:339] "Starting validation webhook" address=":8443" certPath="/usr/local/certificates/cert" keyPath="/usr/local/certificates/key"
+I0612 18:37:30.732127      14 controller.go:217] "Configuration changes detected, backend reload required"
+I0612 18:37:30.745175      14 leaderelection.go:272] "Successfully acquired lease" lock="ingress-nginx/ingress-nginx-leader"
+I0612 18:37:30.745466      14 status.go:85] "New leader elected" identity="ingress-nginx-controller-54754544b9-gh7cp"
+I0612 18:37:30.805021      14 controller.go:231] "Backend successfully reloaded"
+I0612 18:37:30.805640      14 controller.go:243] "Initial sync, sleeping for 1 second"
+I0612 18:37:30.805799      14 event.go:377] Event(v1.ObjectReference{Kind:"Pod", Namespace:"ingress-nginx", Name:"ingress-nginx-controller-54754544b9-gh7cp", UID:"4db629f5-b54e-46ca-8a85-60caf47272a4", APIVersion:"v1", ResourceVersion:"1195", FieldPath:""}): type: 'Normal' reason: 'RELOAD' NGINX reload triggered due to a change in configuration
+I0612 18:38:12.323695      14 main.go:107] "successfully validated configuration, accepting" ingress="default/nginx-ingress"
+I0612 18:38:12.327847      14 store.go:443] "Found valid IngressClass" ingress="default/nginx-ingress" ingressclass="_"
+I0612 18:38:12.331067      14 event.go:377] Event(v1.ObjectReference{Kind:"Ingress", Namespace:"default", Name:"nginx-ingress", UID:"b20c69a8-2927-4825-a9bf-fc5e0d49bc7a", APIVersion:"networking.k8s.io/v1", ResourceVersion:"1275", FieldPath:""}): type: 'Normal' reason: 'Sync' Scheduled for sync
+I0612 18:38:12.332099      14 controller.go:217] "Configuration changes detected, backend reload required"
+I0612 18:38:12.413535      14 controller.go:231] "Backend successfully reloaded"
+I0612 18:38:12.415299      14 event.go:377] Event(v1.ObjectReference{Kind:"Pod", Namespace:"ingress-nginx", Name:"ingress-nginx-controller-54754544b9-gh7cp", UID:"4db629f5-b54e-46ca-8a85-60caf47272a4", APIVersion:"v1", ResourceVersion:"1195", FieldPath:""}): type: 'Normal' reason: 'RELOAD' NGINX reload triggered due to a change in configuration
+I0612 18:38:30.752142      14 status.go:311] "updating Ingress status" namespace="default" ingress="nginx-ingress" currentValue=null newValue=[{"hostname":"localhost"}]
+I0612 18:38:30.758068      14 event.go:377] Event(v1.ObjectReference{Kind:"Ingress", Namespace:"default", Name:"nginx-ingress", UID:"b20c69a8-2927-4825-a9bf-fc5e0d49bc7a", APIVersion:"networking.k8s.io/v1", ResourceVersion:"1307", FieldPath:""}): type: 'Normal' reason: 'Sync' Scheduled for sync
