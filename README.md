@@ -84,7 +84,7 @@ Restored Service selector:
 ## Key Learning
 Service selector misconfigurations can cause silent, non-obvious outages where workloads remain healthy but are completely unreachable.
 
-🚨 Incident 3: CrashLoopBackOff (Application Failure)
+## 🚨 Incident 3: CrashLoopBackOff (Application Failure)
 📌 Summary
 
 This incident simulates a production failure where a Kubernetes Deployment enters a CrashLoopBackOff state due to an invalid container startup command. The issue caused continuous pod restarts and prevented stable application availability.
