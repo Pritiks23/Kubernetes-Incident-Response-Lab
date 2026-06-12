@@ -1,0 +1,2 @@
+NAME                     READY   STATUS    RESTARTS   AGE    IP            NODE                         NOMINATED NODE   READINESS GATES
+nginx-6fcbf697f9-gxppd   1/1     Running   0          103s   10.244.0.22   incident-lab-control-plane   <none>           <none>

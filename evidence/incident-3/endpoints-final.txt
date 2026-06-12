@@ -1,0 +1,2 @@
+NAME    ENDPOINTS        AGE
+nginx   10.244.0.22:80   69m

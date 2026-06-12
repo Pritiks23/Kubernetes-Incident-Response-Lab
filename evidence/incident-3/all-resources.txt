@@ -1,0 +1,14 @@
+NAME                         READY   STATUS    RESTARTS   AGE    IP            NODE                         NOMINATED NODE   READINESS GATES
+pod/nginx-6fcbf697f9-gxppd   1/1     Running   0          103s   10.244.0.22   incident-lab-control-plane   <none>           <none>
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   69m   <none>
+service/nginx        ClusterIP   10.96.47.3   <none>        80/TCP    66m   app=nginx
+
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES   SELECTOR
+deployment.apps/nginx   1/1     1            1           67m   nginx        nginx    app=nginx
+
+NAME                               DESIRED   CURRENT   READY   AGE    CONTAINERS   IMAGES   SELECTOR
+replicaset.apps/nginx-6fcbf697f9   1         1         1       103s   nginx        nginx    app=nginx,pod-template-hash=6fcbf697f9
+replicaset.apps/nginx-6fd8c8458c   0         0         0       12m    nginx        nginx    app=nginx,pod-template-hash=6fd8c8458c
+replicaset.apps/nginx-7f8fbb96d    0         0         0       67m    nginx        nginx    app=nginx,pod-template-hash=7f8fbb96d

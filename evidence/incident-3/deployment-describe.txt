@@ -1,0 +1,38 @@
+Name:                   nginx
+Namespace:              default
+CreationTimestamp:      Fri, 12 Jun 2026 18:32:49 +0000
+Labels:                 app=nginx
+Annotations:            deployment.kubernetes.io/revision: 6
+Selector:               app=nginx
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:       app=nginx
+  Annotations:  kubectl.kubernetes.io/restartedAt: 2026-06-12T19:38:20Z
+  Containers:
+   nginx:
+    Image:         nginx
+    Port:          <none>
+    Host Port:     <none>
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  nginx-7f8fbb96d (0/0 replicas created), nginx-6fd8c8458c (0/0 replicas created)
+NewReplicaSet:   nginx-6fcbf697f9 (1/1 replicas created)
+Events:
+  Type    Reason             Age                  From                   Message
+  ----    ------             ----                 ----                   -------
+  Normal  ScalingReplicaSet  5m2s (x2 over 12m)   deployment-controller  Scaled up replica set nginx-6fd8c8458c from 0 to 1
+  Normal  ScalingReplicaSet  2m11s (x3 over 67m)  deployment-controller  Scaled up replica set nginx-7f8fbb96d from 0 to 1
+  Normal  ScalingReplicaSet  2m10s (x2 over 6m)   deployment-controller  Scaled down replica set nginx-6fd8c8458c from 1 to 0
+  Normal  ScalingReplicaSet  117s                 deployment-controller  Scaled up replica set nginx-6fcbf697f9 from 0 to 1
+  Normal  ScalingReplicaSet  115s (x3 over 12m)   deployment-controller  Scaled down replica set nginx-7f8fbb96d from 1 to 0

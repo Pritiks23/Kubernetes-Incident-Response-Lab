@@ -1,0 +1,4 @@
+NAME               DESIRED   CURRENT   READY   AGE    CONTAINERS   IMAGES   SELECTOR
+nginx-6fcbf697f9   1         1         1       4m9s   nginx        nginx    app=nginx,pod-template-hash=6fcbf697f9
+nginx-6fd8c8458c   0         0         0       15m    nginx        nginx    app=nginx,pod-template-hash=6fd8c8458c
+nginx-7f8fbb96d    0         0         0       69m    nginx        nginx    app=nginx,pod-template-hash=7f8fbb96d
