@@ -1,0 +1,6 @@
+NAMESPACE       NAME                                 ENDPOINTS                                                   AGE
+default         kubernetes                           172.18.0.2:6443                                             35m
+default         nginx                                10.244.0.5:80                                               31m
+ingress-nginx   ingress-nginx-controller             10.244.0.9:443,10.244.0.9:80                                28m
+ingress-nginx   ingress-nginx-controller-admission   10.244.0.9:8443                                             28m
+kube-system     kube-dns                             10.244.0.2:9153,10.244.0.4:9153,10.244.0.2:53 + 3 more...   35m

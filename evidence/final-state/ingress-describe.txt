@@ -1,0 +1,16 @@
+Name:             nginx-ingress
+Labels:           <none>
+Namespace:        default
+Address:          localhost
+Ingress Class:    <none>
+Default backend:  <default>
+Rules:
+  Host        Path  Backends
+  ----        ----  --------
+  *           
+              /   nginx:80 (10.244.0.5:80)
+Annotations:  <none>
+Events:
+  Type    Reason  Age                  From                      Message
+  ----    ------  ----                 ----                      -------
+  Normal  Sync    4m30s (x4 over 27m)  nginx-ingress-controller  Scheduled for sync
